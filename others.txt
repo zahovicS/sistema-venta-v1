@@ -1,0 +1,13 @@
+
+        $isVendedor = _user_has_role("Vendedor");
+
+        if($isVendedor && empty(auth()->user()["store_id"])){
+            auth()->guard('auth');
+            auth()->logout();
+            echo view('pages.auth.login', array_merge($data, [
+                'errors' => array_merge(
+                    auth()->errors(),
+                    $this->form->errors()
+                ),
+            ]));
+        }

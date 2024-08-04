@@ -1,0 +1,5 @@
+.swal2-icon:has(.swal2-icon-content img) {
+    border: 0.25em solid transparent!important;
+    border-radius: unset!important;
+    border-color: transparent!important;
+}
