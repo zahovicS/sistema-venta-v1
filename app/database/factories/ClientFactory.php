@@ -16,8 +16,8 @@ class ClientFactory extends Factory
 	 */
 	public function definition(): array
 	{
-        $fakerPeru = new Person();
-        $fakerPeruCompany = new Company();
+        $fakerPeru = new Person($this->faker);
+        $fakerPeruCompany = new Company($this->faker);
         $documentType = $this->faker->randomElement([1,2]);
         $numberDocument = $documentType == 1 ? $fakerPeru->dni() : $fakerPeruCompany->ruc($this->faker->randomElement([true,false]));
 		return [
@@ -25,7 +25,7 @@ class ClientFactory extends Factory
 			'document_number' => $numberDocument,
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
-            'phone' => $this->faker->unique()->phoneNumber(),
+            'phone' => $this->faker->unique()->e164PhoneNumber(),
             'telephone' => $this->faker->unique()->e164PhoneNumber(),
             'address' => $this->faker->streetAddress(),
 		];
