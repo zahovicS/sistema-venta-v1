@@ -6,8 +6,11 @@ export default defineConfig({
         leaf({
             input: [
                 'resources/css/custom.css',
+                'resources/css/skeleton.css',
                 'resources/js/app.js',
                 'resources/js/stores/select-store.js',
+                'resources/js/stores/clear-select-store.js',
+                'resources/js/dashboard/client-dashboard.js'
             ],
             refresh: true,
         }),
