@@ -4,7 +4,7 @@ use Leaf\Schema;
 use Leaf\Database;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateClientes extends Database
+class CreateClients extends Database
 {
     /**
      * Run the migrations.
