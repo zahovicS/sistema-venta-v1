@@ -43,7 +43,7 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">Menu</li>
+                <li class="sidebar-title text-uppercase">Menu</li>
                 @if(_user_can("dashboard"))
                     <li class="sidebar-item {{ is_current_route("dashboard") ? 'active' : '' }}">
                         <a href="{{ _route("dashboard")  }}" class='sidebar-link'>
@@ -53,15 +53,7 @@
                     </li>
                 @endif
 
-                @if(_user_can("clients"))
-                    <li class="sidebar-item {{ is_current_route("clientes") ? 'active' : '' }}">
-                        <a href="{{ _route("clientes.index") }}" class='sidebar-link'>
-                            <i class="ph ph-users fs-4"></i>
-                            <span>Clientes</span>
-                        </a>
-                    </li>
-                @endif
-
+                <li class="sidebar-title text-uppercase">Logística</li>
                 @if(_user_can("categories"))
                     <li class="sidebar-item {{ is_current_route("categorias") ? 'active' : '' }}">
                         <a href="{{ _route("categorias.index") }}" class='sidebar-link'>
@@ -89,14 +81,17 @@
                     </li>
                 @endif
 
-                @if(_user_can("users"))
-                    <li class="sidebar-item {{ is_current_route("usuarios.index") ? 'active' : '' }}">
-                        <a href="{{ _route("categorias.index") }}" class='sidebar-link'>
-                            <i class="ph ph-users-three fs-4"></i>
-                            <span>Usuarios</span>
+                @if(_user_can("clients"))
+                    <li class="sidebar-item {{ is_current_route("clientes") ? 'active' : '' }}">
+                        <a href="{{ _route("clientes.index") }}" class='sidebar-link'>
+                            <i class="ph ph-users fs-4"></i>
+                            <span>Clientes</span>
                         </a>
                     </li>
                 @endif
+
+                <li class="sidebar-title text-uppercase">Gestión de ventas</li>
+
 
                 @if(_user_can("sales"))
                     <li class="sidebar-item  has-sub">
@@ -129,6 +124,33 @@
                         </ul>
                     </li>
                 @endif
+
+                <li class="sidebar-title text-uppercase">Gestión RRHH</li>
+
+                @if(_user_can("users"))
+                    <li class="sidebar-item {{ is_current_route("usuarios.index") ? 'active' : '' }}">
+                        <a href="{{ _route("categorias.index") }}" class='sidebar-link'>
+                            <i class="ph ph-users-three fs-4"></i>
+                            <span>Usuarios</span>
+                        </a>
+                    </li>
+                @endif
+
+                <li class="sidebar-title text-uppercase">Gestión del sistema</li>
+
+                <li class="sidebar-item {{ is_current_route("business.index") ? 'active' : '' }}">
+                    <a href="{{ _route("business.index") }}" class='sidebar-link'>
+                        <i class="ph ph-building-office fs-4"></i>
+                        <span>Empresa</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ is_current_route("store.index") ? 'active' : '' }}">
+                    <a href="{{ _route("store.index") }}" class='sidebar-link'>
+                        <i class="ph ph-storefront fs-4"></i>
+                        <span>Sucursales</span>
+                    </a>
+                </li>
                 {{--
                                 <li class="sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
