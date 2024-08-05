@@ -13,16 +13,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): array
     {
-        return [
-            UsersSeeder::class,
-            CompaniesSeeder::class,
-            StoresSeeder::class,
-            RolesSeeder::class,
-            PermissionsSeeder::class,
-            RoleHasPermissionsSeeder::class,
-            RoleUser::class,
-            DocumentTypeSeeder::class,
-            ClientSeeder::class
-        ];
+        $this->call(UsersSeeder::class);
+        $this->call(CompaniesSeeder::class);
+        $this->call(StoresSeeder::class);
+        $this->call(RolesSeeder::class);
+        $this->call(PermissionsSeeder::class);
+        $this->call(RoleHasPermissionsSeeder::class);
+        $this->call(RoleUser::class);
+        $this->call(DocumentTypesSeeder::class);
+        $this->call(ClientsSeeder::class);
+//        return [
+//            CompaniesSeeder::class,
+//            StoresSeeder::class,
+//            RolesSeeder::class,
+//            PermissionsSeeder::class,
+//            RoleHasPermissionsSeeder::class,
+//            RoleUser::class,
+//            DocumentTypesSeeder::class,
+//            ClientsSeeder::class,
+//        ];
     }
 }
