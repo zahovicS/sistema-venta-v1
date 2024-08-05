@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ assets_path("css/phosphor-icons/thin.css") }}">
     {{-- CUSTOM THEME --}}
     {{ vite_resource("css/custom.css") }}
+    {{ vite_resource("css/skeleton.css") }}
     {{-- INIT THEME --}}
     <script src="{{ assets_path("theme/maze/js/initTheme.js") }}"></script>
     @yield("styles")

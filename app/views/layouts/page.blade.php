@@ -31,9 +31,11 @@
                         </div>
                     </div>
                 </div>
-                <section class="section">
-                    @yield("content")
-                </section>
+                <div class="page-content">
+                    <section class="section">
+                        @yield("content")
+                    </section>
+                </div>
             </div>
         </div>
     </div>
