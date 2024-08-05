@@ -25,5 +25,6 @@ app()->group('/users', [
     'middleware' => 'web-auth',
     function () {
         app()->post('/set-store-user', ['name' => 'users.set-store-user', 'middleware' => 'permissionMiddleware', 'UserController@set_store_user']);
+        app()->get('/clear-store-user', ['name' => 'users.clear-store-user', 'middleware' => 'permissionMiddleware', 'UserController@clear_store_user']);
     }
 ]);
