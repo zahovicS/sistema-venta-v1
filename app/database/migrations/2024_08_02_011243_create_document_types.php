@@ -15,9 +15,9 @@ class CreateDocumentTypes extends Database
         if (!static::$capsule::schema()->hasTable('document_types')) :
             static::$capsule::schema()->create('document_types', function (Blueprint $table) {
                 $table->id('id');
-                $table->string('name',50)->unique()->index();
+                $table->string('name', 50)->unique()->index();
                 $table->integer('min_length')->default(8);
-                $table->enum('status',['A','I'])->default('A')->index()->comment('A => ACTIVO, I => INACTIVO');
+                $table->enum('status', ['A', 'I'])->default('A')->index()->comment('A => ACTIVO, I => INACTIVO');
                 $table->timestamps();
             });
         endif;
