@@ -77,6 +77,14 @@ class PermissionsSeeder extends Seeder
                  'name' => 'users.set-store-user',
                  'alias' => '-',
              ],
+             [
+                 'name' => 'users.clear-store-user',
+                 'alias' => '-',
+             ],
+             [
+                 'name' => 'clients.get-top-potential-clients',
+                 'alias' => '-',
+             ],
          ]);
     }
 }
