@@ -46,3 +46,15 @@ function _user_has_store(){
     }
 }
 
+/**
+ * Retorna la tienda del usuario
+ * @return null|\App\Models\Store
+ */
+function _user_get_store(){
+    try {
+        $store_id = auth()->user()["store_id"];
+        return \App\Models\Store::findOrFail($store_id);
+    } catch (\Exception $e) {
+        return null;
+    }
+}
