@@ -12,21 +12,21 @@ class CreateUsers extends Database
      */
     public function up()
     {
-         if (!static::$capsule::schema()->hasTable('users')):
-         	static::$capsule::schema()->create('users', function (Blueprint $table) {
+        if (!static::$capsule::schema()->hasTable('users')):
+            static::$capsule::schema()->create('users', function (Blueprint $table) {
                 $table->id('id');
                 $table->unsignedBigInteger('store_id')->nullable();
-         		$table->string('username');
-         		$table->string('fullname');
-         		$table->string('email')->unique();
-         		$table->timestamp('email_verified_at')->nullable();
+                $table->string('username');
+                $table->string('fullname');
+                $table->string('email')->unique();
+                $table->timestamp('email_verified_at')->nullable();
                 $table->string('password');
-                $table->enum('status',['A','I'])->default('A')->index()->comment('A => ACTIVO, I => INACTIVO');
-         		$table->rememberToken();
-         		$table->timestamps();
+                $table->enum('status', ['A', 'I'])->default('A')->index()->comment('A => ACTIVO, I => INACTIVO');
+                $table->rememberToken();
+                $table->timestamps();
                 $table->foreign('store_id')->references('id')->on('stores')->onDelete('restrict');
-         	});
-         endif;
+            });
+        endif;
 
         /**
          * Leaf Schema allows you to build migrations
