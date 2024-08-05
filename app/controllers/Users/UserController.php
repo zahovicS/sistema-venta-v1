@@ -28,4 +28,13 @@ class UserController extends Controller
             return response()->json(["status" => "error", "message" => $exception->getMessage()]);
         }
     }
+
+    public function clear_store_user(){
+        try {
+            $this->userService->clear_store_to_user();
+            return response()->json(["status" => "success", "message" => "Usted ha salido de la tienda."]);
+        }catch (Exception $exception){
+            return response()->json(["status" => "error", "message" => $exception->getMessage()]);
+        }
+    }
 }
