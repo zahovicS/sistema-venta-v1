@@ -51,6 +51,7 @@ const loadTopPotentialClients = async () => {
         }
 
         setTimeout(() => {
+            $containerPotentialClients.replaceChildren([]);
             for (const potentialClient of potentialClients) {
                 const $clientComponent = clientInfoComponent(potentialClient);
                 $containerPotentialClients.appendChild($clientComponent);

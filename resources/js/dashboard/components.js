@@ -25,6 +25,8 @@
 //     </div>
 // </div>
 
+import {_assetsPath} from "../helpers/paths.js";
+
 /**
  * Devuelve un componente html del cliente
  * @param {Client} client
@@ -38,11 +40,11 @@ export const clientInfoComponent = (client) => {
 
     // Crear el elemento div para el avatar
     const $avatarDiv = document.createElement('div');
-    $avatarDiv.className = 'avatar avatar-lg';
+    $avatarDiv.className = 'avatar avatar-lg align-items-center';
 
     // Crear el elemento img para el avatar
     const $avatarImg = document.createElement('img');
-    $avatarImg.src = 'img/icons/colored/w11-businessman.png';
+    $avatarImg.src = _assetsPath('img/icons/colored/w11-businessman.png');
     $avatarImg.alt = 'business';
 
     // Agregar el elemento img al div del avatar
@@ -52,22 +54,28 @@ export const clientInfoComponent = (client) => {
     const $nameDiv = document.createElement('div');
     $nameDiv.className = 'name ms-4';
 
+    // Crear el elemento h5 para el documento
+    const $documentH6 = document.createElement('h6');
+    $documentH6.className = 'fw-bold mb-1';
+    $documentH6.textContent = `${client.document_number}`;
+
     // Crear el elemento h5 para el nombre
-    const $nameH5 = document.createElement('h5');
-    $nameH5.className = 'mb-1';
-    $nameH5.textContent = `${client.document_number} - ${client.name}`;
+    const $nameH6 = document.createElement('h6');
+    $nameH6.className = 'mb-1';
+    $nameH6.textContent = `${client.name}`;
 
     // Crear el elemento h6 para la dirección
-    const addressH6 = document.createElement('h6');
-    addressH6.className = 'text-muted mb-0';
-    addressH6.textContent = client.address;
+    const $addressH6 = document.createElement('h6');
+    $addressH6.className = 'text-muted mb-0';
+    $addressH6.textContent = client.address;
 
     // Agregar los elementos h5 y h6 al div del nombre
-    $nameDiv.appendChild($nameH5);
-    $nameDiv.appendChild(addressH6);
+    $nameDiv.appendChild($documentH6);
+    $nameDiv.appendChild($nameH6);
+    $nameDiv.appendChild($addressH6);
 
     // Agregar los elementos div del avatar y nombre al div contenedor
-    clientComponent.appendChild(avatarDiv);
+    clientComponent.appendChild($avatarDiv);
     clientComponent.appendChild($nameDiv);
 
     return clientComponent;
