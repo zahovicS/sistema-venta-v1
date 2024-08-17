@@ -22,15 +22,12 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleUser::class);
         $this->call(DocumentTypesSeeder::class);
         $this->call(ClientsSeeder::class);
-//        return [
-//            CompaniesSeeder::class,
-//            StoresSeeder::class,
-//            RolesSeeder::class,
-//            PermissionsSeeder::class,
-//            RoleHasPermissionsSeeder::class,
-//            RoleUser::class,
-//            DocumentTypesSeeder::class,
-//            ClientsSeeder::class,
-//        ];
+        $this->call(PaymentMethodsSeeder::class);
+        $this->call(TypeInvoicesSeeder::class);
+        $this->call(CurrenciesSeeder::class);
+        $this->call(CategoriesSeeder::class);
+        $this->call(BrandsSeeder::class);
+        $this->call(ProductsSeeder::class);
+        $this->call(StatusProductsStoresSeeder::class);
     }
 }

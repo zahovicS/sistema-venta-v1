@@ -18,7 +18,7 @@ class CreateProducts extends Database
                 $table->unsignedBigInteger('category_id');
                 $table->unsignedBigInteger('brand_id');
                 $table->string('image')->nullable();
-                $table->string('code',15)->index()->unique();
+                $table->string('code',13)->index()->unique();
                 $table->string('description')->index();
                 $table->timestamps();
                 $table->foreign('category_id')->references('id')->on('categories')->onDelete('restrict');
