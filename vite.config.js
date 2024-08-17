@@ -10,7 +10,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/stores/select-store.js',
                 'resources/js/stores/clear-select-store.js',
-                'resources/js/dashboard/client-dashboard.js'
+                'resources/js/dashboard/client-dashboard.js',
+                'resources/js/dashboard/widgets.js'
             ],
             refresh: true,
         }),
